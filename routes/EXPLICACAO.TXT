@@ -1,0 +1,15 @@
+Como estamos forçando todos os pedidos a um unico arquivo .php na pasta public, precisamos dar uma maneira de acessar outros arquivos. a maneira encontrada é utilizando um roteador virtual.
+
+Nesta pasta configuramos quais endereços ligam para quais modelos, durante esse processo o roteador tambem irá verificar o arquivo destino e carregar de acordo: um arquivo dentro da pasta public não precisa ser restringido, mas um arquivo fora desta pasta provavelmente precisara de acesso com senha.
+
+A ideia é que rotas funcionam com o modelo MVC: 
+ - uma rota chama um controlador
+ - o controlador valida o pedido e chama as views e models especificas.
+ - o programa entrega para o usuário um arquivo HTML com as especificações do controlador
+ - o programa é finalizado e aguarda próximo pedido.
+
+nessa etapa apenas especificamos qual rota encontra qual controlador.
+as rotas são faceis de entender e possui a seguinte sintaxe:
+
+Route::{{TipoPedido}}("Rota que o usuário esta acessando",[controlador e qual sua função de entrada.])
+
