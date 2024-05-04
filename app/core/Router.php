@@ -7,23 +7,24 @@ use app\core\Debugger\Debug;
 
 class Router
 {
-    private $ListaRotas = [];
+    protected static $ListaRotas = [];
 
     //
     //
     //
-    public static function Get()
+    public static function Get(string $Route, $controller_method)
     {
+        Router::$ListaRotas['GET'][$Route] = $controller_method;
     }
-    public static function Post()
+    public static function Post(string $Route, $controller_method)
     {
+        Router::$ListaRotas['POST'][$Route] = $controller_method;
     }
-    public static function Delete()
+    public static function Delete(string $Route, $controller_method)
     {
+        Router::$ListaRotas['DELETE'][$Route] = $controller_method;
     }
-    public static function Put()
-    {
-    }
+    
 
     public static function LoadRoutes()
     { // existem maneiras melhores, mas isso vai funcionar por enquanto.
@@ -31,8 +32,33 @@ class Router
     }
 
     public static function ParseRequest()
-    {
-        Debug::Dump($_SERVER);
+    {   
+
+       var_dump(http_response_code());
+
+        $ConnectionController = Router::$ListaRotas[Request::RequestType()][Request::URLpath()];
+        
+        if (!$ConnectionController)
+        {
+            Debug::DumpAndDie("Sem controlador.");
+        }
+        
+
+
+        $controller = new $ConnectionController[0]();
+        
+       
+        
+        if (method_exists($controller,$ConnectionController[1]))
+        {  
+            // OK, eu tambem não sei explicar, mas isso funciona.
+            // Sim, é por isso que eu faço menções a deus.
+            $controller->{$ConnectionController[1]}();
+        }
+        
+        
+        
+       
 
     }
 }
