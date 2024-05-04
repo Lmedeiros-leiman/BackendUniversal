@@ -1,0 +1,9 @@
+A pasta public é onde ficam as partes publicas... ok isso não foi explicativo.
+
+A pasta public define todos os arquivos que são expostos para o mundo e para a internet, quando hospedamos em um site normalmente deixamos arquivos que são acessados por um usuário por um pedido pela internet.
+
+normalmente os arquivos expostos não são muito surpreendentes: arquivos css, javascript e html junto com imagens,fontes...
+enfim, todo arquivo que precisa ser entregue junto com os dados do html padrão para que o site funcione perfeitamente.
+
+é muito comum atualmente utilizar-mos um unico arquivo de entrada que é quem recebe o pedido, redirecionado a ele pelo arquivo .htaccess: a ideia é poder melhor controlar o acesso do usuário/cliente e proibir o acesso a certos recursos.
+
