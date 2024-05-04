@@ -7,3 +7,7 @@ enfim, todo arquivo que precisa ser entregue junto com os dados do html padrão 
 
 é muito comum atualmente utilizar-mos um unico arquivo de entrada que é quem recebe o pedido, redirecionado a ele pelo arquivo .htaccess: a ideia é poder melhor controlar o acesso do usuário/cliente e proibir o acesso a certos recursos.
 
+o esperado dessa separação nessa pasta exclusiva é:
+- nos permite separar uma aplicação front end do nosso backend.
+- nos permite diferenciar um modelo que é usado pelo backend de um arquivo front-end
+- nos permitir facilmente separar arquivos publicos (imagens/comprovantes...) de arquivos privados.
