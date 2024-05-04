@@ -3,6 +3,8 @@
 
 namespace app\core;
 
+use app\core\Debugger\Debug;
+
 class Router
 {
     private $ListaRotas = [];
@@ -30,6 +32,7 @@ class Router
 
     public static function ParseRequest()
     {
-        var_dump($_REQUEST);
+        Debug::Dump($_SERVER);
+
     }
 }
