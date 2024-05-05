@@ -21,6 +21,6 @@ require __DIR__. "/../vendor/autoload/autoloader.php";
 Router::LoadRoutes();
 
 // validamos para onde enviar o pedido do nosso cliente
-Router::ParseRequest();
+Router::Reroute();
 
 

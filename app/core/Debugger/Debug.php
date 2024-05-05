@@ -5,18 +5,20 @@ namespace app\core\Debugger;
 
 class Debug 
 {
-    public static function Dump($variable, $nomear = false) 
+    public static function Dump($variable) : void
     {   
-        if ($nomear) 
-        {
-            echo "Printando {". "eae" ." } ";
-        }
+        $DebugBackTrace = debug_backtrace();
+        
+        /*
         echo "<pre>";
+        echo 'Printing at: '. $DebugBackTrace["file"] . "|function: ". $DebugBackTrace['function']."|Line:".$DebugBackTrace['Line'];
         var_dump($variable);
         echo "</pre>";
+        */
+
     }
 
-    public static function DumpAndDie($variable) 
+    public static function DumpAndDie($variable)  : void
     {   
         Debug::Dump($variable);
         die();

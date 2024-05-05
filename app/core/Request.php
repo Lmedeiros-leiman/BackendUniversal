@@ -12,10 +12,10 @@ class Request
     public static function URLpath() 
     {
         
-        return parse_url($_SERVER['REQUEST_URI'])['path'];;
+        return $_SERVER['PATH_INFO'];
     }
     public static function URLquery() {
-        return parse_url($_SERVER['REQUEST_URI'])['query'];
+        return $_SERVER["QUERY_STRING"];
     }
 
     public static function RequestType() {
