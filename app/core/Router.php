@@ -34,8 +34,6 @@ class Router
     public static function Reroute(array $NovaRota = [PageNotFound::class, 'index', ['eae','obaoba'] ]) 
     { 
 
-        Debug::Dump(debug_backtrace());
-        
         $ConnectionController = Router::$ListaRotas[Request::RequestType()][Request::URLpath()];
         if ($ConnectionController == null) 
         {

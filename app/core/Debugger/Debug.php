@@ -8,13 +8,17 @@ class Debug
     public static function Dump($variable) : void
     {   
         $DebugBackTrace = debug_backtrace();
-        
-        /*
-        echo "<pre>";
-        echo 'Printing at: '. $DebugBackTrace["file"] . "|function: ". $DebugBackTrace['function']."|Line:".$DebugBackTrace['Line'];
+
+        $filePath = "<span style='color:red;'>".$DebugBackTrace[0]["file"]."</span>";
+        $functionUsed = "<span style='color:red;'>".$DebugBackTrace[0]["function"]."</span>";
+        $lineUsed = "<span style='color:red;'>".$DebugBackTrace[0]["line"]."</span>";
+
+        echo "<pre style='color:whitesmoke; background-color:gray;font-weight:bold'>";
+        echo "Printing at:".$filePath."|function:".$functionUsed."|Line:".$lineUsed .PHP_EOL;
         var_dump($variable);
         echo "</pre>";
-        */
+
+
 
     }
 
