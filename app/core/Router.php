@@ -31,29 +31,24 @@ class Router
         require_once ROOT_FOLDER . "/routes/WebRoutes.php";
     }
 
-    public static function Reroute(array $NovaRota = [PageNotFound::class, 'index', ['eae','obaoba'] ]) 
-    { 
+    public static function Reroute(array $NovaRota = [PageNotFound::class, 'index', ['eae', 'obaoba']])
+    {
 
         $ConnectionController = Router::$ListaRotas[Request::RequestType()][Request::URLpath()];
-        if ($ConnectionController == null) 
-        {
+        if ($ConnectionController == null) {
             $ConnectionController = $NovaRota;
-            if ($ConnectionController == null) 
-            {
+            if ($ConnectionController == null) {
                 // Defaults into 404 page.
                 Router::Reroute();
                 exit();
             }
         }
-        
-       
+
         $controller = new $ConnectionController[0]();
-        if (method_exists($controller,$ConnectionController[1]))
-        {  
+        if (method_exists($controller, $ConnectionController[1])) {
             // OK, eu tambem não sei explicar, mas isso funciona.
             // Sim, é por isso que eu faço menções a deus.
             $controller->{$ConnectionController[1]}(...$ConnectionController[2]);
         }
     }
-    
 }

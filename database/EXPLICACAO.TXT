@@ -1,0 +1,9 @@
+howee a pasta database.
+
+A pasta database possui a estrutura de como o banco de dados é estabelecida sendo comum encontrar um "semeador" de banco de dados, esse é um algoritmo que se comunica com o banco verificando se o banco que será usado já existe e se as tabelas estão criadas.
+
+simular ao PHPMyAdmin a ideia é facilitar a interação com o banco, porem o diferencial é que fazemos por código ao inves de uma interface gráfica.
+
+para executar o semeador só precisamos executar o prepararBanco.php usando php prepararBanco.php
+
+como é chato ficar digitando "php ./database/prepararBanco.php" toda vez, alguns frameworks criam uma pasta especial bin e criam um gerenciador de comandos de terminal, no php é o cake enquanto no laravel é o artisan, nada mais do que uma script em php que executa uma função
